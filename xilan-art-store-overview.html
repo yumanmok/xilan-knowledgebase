@@ -1,146 +1,185 @@
-1|<!DOCTYPE html>
-2|<html lang="zh-CN">
-3|<head>
-4|<meta charset="UTF-8">
-5|<meta name="viewport" content="width=device-width, initial-scale=1.0">
-6|<title>晞蓝艺术商店总览 - 晞蓝·知识库</title>
-7|<style>
-8|  :root {{
-9|    --bg: #f7f1ea; --text: #25323a; --accent: #8ea9c9;
-10|    --pink: #d9a2a0; --amber: #d8873d; --gray: #e0d8ce;
-11|  }}
-12|  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-13|  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }}
-14|  .nav {{ background: var(--accent); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
-15|  .nav-inner {{ max-width: 1000px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 2rem; align-items: center; }}
-16|  .nav a {{ color: white; text-decoration: none; font-weight: 500; }}
-17|  .nav a:hover {{ text-decoration: underline; }}
-18|  .nav .brand {{ font-size: 1.2rem; font-weight: 700; }}
-19|  .container {{ max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }}
-20|  .sidebar {{ float: left; width: 250px; background: white; border-radius: 8px; padding: 1rem; margin-right: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
-21|  .sidebar h3 {{ color: var(--accent); font-size: 0.9rem; margin: 1rem 0 0.5rem; }}
-22|  .sidebar a {{ display: block; padding: 0.3rem 0.5rem; color: var(--text); text-decoration: none; font-size: 0.9rem; border-radius: 4px; }}
-23|  .sidebar a:hover {{ background: var(--gray); }}
-24|  .content {{ margin-left: 270px; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); min-height: 60vh; }}
-25|  .content h1 {{ color: var(--accent); margin-bottom: 1rem; }}
-26|  .content h2 {{ border-bottom: 2px solid var(--gray); padding-bottom: 0.3rem; margin: 1.5rem 0 0.5rem; }}
-27|  .content p {{ margin: 0.5rem 0; }}
-28|  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; }}
-29|  .content th, .content td {{ border: 1px solid var(--gray); padding: 0.5rem; text-align: left; }}
-30|  .content th {{ background: var(--accent); color: white; }}
-31|  pre {{ background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; }}
-32|  code {{ background: #f0f0f0; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }}
-33|  img {{ max-width: 100%; border-radius: 4px; }}
-34|  .footer {{ text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; clear: both; }}
-35|  blockquote {{ border-left: 4px solid var(--pink); padding-left: 1rem; margin: 1rem 0; color: #666; }}
-36|  @media (max-width: 768px) {{ .sidebar {{ float: none; width: 100%; margin: 0 0 1rem; }} .content {{ margin-left: 0; }} }}
-37|</style>
-38|</head>
-39|<body>
-40|<div class="nav">
-41|  <div class="nav-inner">
-42|    <a href="/xilan-knowledgebase/xilan-knowledgebase/" class="brand">晞蓝 · 知识库</a>
-43|    <a href="/xilan-knowledgebase/xilan-knowledgebase/">首页</a>
-44|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-art-store-overview.html">晞蓝</a>
-45|    <a href="/xilan-knowledgebase/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-46|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-47|    <a href="/xilan-knowledgebase/xilan-knowledgebase/index.html">索引</a>
-48|  </div>
-49|</div>
-50|<div class="container">
-51|  <div class="sidebar">
-52|    <h3>📖 晞蓝</h3>
-53|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
-54|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-brand-identity.html">品牌身份</a>
-55|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-selection-and-products.html">选品与产品线</a>
-56|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-visual-and-content-language.html">视觉与内容语言</a>
-57|    <h3>🎨 生气画会</h3>
-58|    <a href="/xilan-knowledgebase/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-59|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-60|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-see-her-after.html">看见她之后</a>
-61|    <a href="/xilan-knowledgebase/xilan-knowledgebase/xilan-stardust-bracelet.html">星尘落款</a>
-62|  </div>
-63|  <div class="content">
-64|    <h1>晞蓝艺术商店总览</h1>
-65|<h2>入口导航</h2>
-66|<ul>
-67|<li><a href="xilan-brand-identity.md">晞蓝品牌身份</a></li>
-68|<li><a href="xilan-selection-and-products.md">晞蓝选品与产品线</a></li>
-69|<li><a href="xilan-visual-and-content-language.md">晞蓝视觉与内容语言</a></li>
-70|<li><a href="xilan-see-her-beyond.md">她与她之外</a></li>
-71|<li><a href="xilan-see-her-after.md">看见她之后</a></li>
-72|<li><a href="xilan-stardust-bracelet.md">星尘落款</a></li>
-73|<li><a href="../sources/xilan/internal-materials.md">晞蓝内部资料来源卡</a></li>
-74|</ul>
-75|<h2>项目身份</h2>
-76|<p>晞蓝艺术商店（Light Blue Art Hub）是由生气画会延伸出的生活美学空间，也是生气画会的第一个线下实体店。</p>
-77|<p>相关关系当前可理解为：</p>
-78|<ul>
-79|<li>生气画会：艺术小组与内容母体</li>
-80|<li>晞蓝艺术商店：面向公众的商店与活动空间</li>
-81|<li>回书房：相关注册主体</li>
-82|</ul>
-83|<h2>名称由来</h2>
-84|<p>“晞蓝 LightBlue”取自黎明破晓时的天空颜色，介于夜与昼之间，安静却蓄满光。</p>
-85|<p>这个名字对应了晞蓝的整体气质：温和、克制、耐心，同时保有亮度与生命感。</p>
-86|<h2>核心主张</h2>
-87|<p>我们倡导力所能及的收藏，相信每个人都有一个与艺术相遇的机会。</p>
-88|<p>晞蓝不只售卖生气画会的画作，也挑选适合长期主义者的生活器皿，例如漆盘、茶具、文房盒等。挑选标准不仅关乎审美，也关乎是否适合本地气候与生活习惯，是否能被长久使用。</p>
-89|<p>我们相信，好东西值得挑得久一点，用得久一点。</p>
-90|<h2>商店立场</h2>
-91|<p>春节期间，看到心爱的藏品被大小朋友挑走，那种“众乐乐”的感觉给了团队继续做下去的信心。</p>
-92|<p>晞蓝希望成为一个地球友好的、只售长效设计产品的艺术商店。这里的商业不只是售卖行为，也是伦理实验与价值记录的一部分。</p>
-93|<h2>行动排序</h2>
-94|<p>晞蓝艺术商店可以被理解为“社会 -&gt; 地方 -&gt; 自我 -&gt; 生意”的行动排序的显影。</p>
-95|<p>每一件产品的售出、每一场活动的发生，都是实践作品的可见章节。商业不是与价值分离的结果，而是价值被检验、被记录、被共享的过程。</p>
-96|<h2>选品与内容方向</h2>
-97|<p>晞蓝精选艺术品与生活器物，希望让审美不只停留在墙上或橱窗里，而是可以被触摸、被佩戴、被带回家。</p>
-98|<p>当前已知的方向包括：</p>
-99|<ul>
-100|<li>生气画会的画作</li>
-101|<li>日本漆器</li>
-102|<li>佛山陶艺</li>
-103|<li>艺术史主题珠串</li>
-104|<li>摄影展览及相关内容</li>
-105|</ul>
-106|<h2>2026 主题</h2>
-107|<p>2026 年，晞蓝以&quot;重返千禧&quot;为主题。</p>
-108|<p>围绕这个主题，计划通过展览、弹唱会、庭院活动、社群共创等方式，把&quot;好的生活就是好的教育&quot;落到日常，并持续举办&quot;晞日&quot;&quot;夜蓝静&quot;等跨场域活动，让艺术经验进入共享对话。</p>
-109|<h3>2026 年活动记录</h3>
-110|<p><strong>2月21-22日（大年初五-初六）— 首场演出 🎵</strong></p>
-111|<p>香港独立音乐人 <strong>何英玮（Ewan Ho）</strong> 弹唱会《说真话特别容易被发现》分上下册上演：</p>
-112|<ul>
-113|<li>上册：2月21日（大年初五）19:45</li>
-114|<li>下册：2月22日（大年初六）13:40</li>
-115|<li>地点：阳江市阳东区永安中路15号 LightBlue晞蓝艺术商店</li>
-116|<li>这是晞蓝艺术商店的<strong>首秀</strong>，筹备团队大多是 00 后和准 00 后</li>
-117|<li>为了千禧年视觉效果，找来了两台显像管老电视</li>
-118|<li>何英玮用老式录像机直出画面，&quot;得到一个 20 年前的何英玮&quot;</li>
-119|<li>高潮：乐手走进洗手间演奏，最终 10 个人挤进那个两三平方米的空间</li>
-120|<li>观众卷毛钊说&quot;连气味都勾起她在香港住劏房的记忆&quot;</li>
-121|<li>演出周边&quot;真话容器&quot;在小程序售卖</li>
-122|<li>来源：晞蓝艺术商店公众号《世界忙忙乱乱音乐缝缝补补》</li>
-123|</ul>
-124|<p><strong>5月10日 — 母亲节放映</strong></p>
-125|<p>见 <a href="xilan-see-her-beyond.md">她与她之外</a></p>
-126|<h2>生气画会背景</h2>
-127|<p>生气画会成立于 2017 年，是一个阳江在地艺术小组。</p>
-128|<p>成员由艺术工作者组成，通过对生活尽可能地在场而尽可能地取消边界建立联结，通过修整关系来理解世界，通过文献梳理承上启下。</p>
-129|<h2>后续可继续补充</h2>
-130|<ul>
-131|<li>对外一句话介绍</li>
-132|<li>完整品牌简介：见 <a href="xilan-brand-identity.md">晞蓝品牌身份</a></li>
-133|<li>品牌关键词与视觉气质：见 <a href="xilan-visual-and-content-language.md">晞蓝视觉与内容语言</a></li>
-134|<li>商品线与选品标准：见 <a href="xilan-selection-and-products.md">晞蓝选品与产品线</a></li>
-135|<li>活动记录：见 <a href="xilan-see-her-beyond.md">她与她之外</a></li>
-136|<li>内容转化项目：见 <a href="xilan-see-her-after.md">看见她之后</a></li>
-137|<li>线上渠道与内容计划</li>
-138|<li>团队分工与组织关系</li>
-139|</ul>
-140|  </div>
-141|</div>
-142|<div class="footer">
-143|  晞蓝 · 知识库 &copy; 2026 | 由生气画会-回书房维护
-144|</div>
-145|</body>
-146|</html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晞蓝艺术商店总览 - 晞蓝·知识库</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {{
+    --dawn: #8EAFC9;
+    --deep: #25323A;
+    --warm: #F4EDE5;
+    --pink: #D9A2A0;
+    --amber: #D8873D;
+    --light: #FAF6F0;
+    --gray: #E8E0D6;
+    --text: #2C2C2C;
+    --text-light: #666;
+  }}
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--light); color: var(--text); line-height: 1.9; font-weight: 300; }}
+  a {{ color: var(--dawn); text-decoration: none; }}
+  a:hover {{ color: var(--pink); }}
+  
+  /* Navigation */
+  .nav {{ background: var(--deep); padding: 0; position: sticky; top: 0; z-index: 100; }}
+  .nav-inner {{ max-width: 1100px; margin: 0 auto; display: flex; align-items: center; padding: 0 1.5rem; height: 56px; gap: 0.5rem; }}
+  .nav-brand {{ color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; margin-right: 2rem; }}
+  .nav-brand:hover {{ color: var(--dawn); }}
+  .nav a:not(.nav-brand) {{ color: rgba(255,255,255,0.7); font-size: 0.85rem; padding: 0.3rem 0.6rem; border-radius: 4px; }}
+  .nav a:not(.nav-brand):hover {{ color: #fff; background: rgba(255,255,255,0.1); }}
+  
+  /* Layout */
+  .layout {{ display: flex; max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; gap: 2rem; }}
+  .sidebar {{ width: 220px; flex-shrink: 0; }}
+  .sidebar-section {{ margin-bottom: 1.5rem; }}
+  .sidebar h3 {{ font-size: 0.8rem; color: var(--dawn); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; padding: 0.5rem 0.8rem; background: rgba(142,169,201,0.08); border-radius: 6px; }}
+  .sidebar a {{ display: block; padding: 0.4rem 0.8rem; font-size: 0.88rem; color: var(--text); border-radius: 6px; margin-bottom: 2px; }}
+  .sidebar a:hover {{ background: var(--gray); color: var(--deep); }}
+  .sidebar a.active {{ background: var(--dawn); color: #fff; }}
+  
+  /* Content */
+  .content {{ flex: 1; min-width: 0; background: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
+  .content h1 {{ font-family: 'Noto Serif SC', serif; font-weight: 600; font-size: 2rem; color: var(--deep); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--gray); }}
+  .content h2 {{ font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 1.4rem; color: var(--dawn); margin: 2rem 0 0.8rem; }}
+  .content h3 {{ font-size: 1.1rem; font-weight: 500; color: var(--deep); margin: 1.5rem 0 0.5rem; }}
+  .content p {{ margin: 0.6rem 0; color: var(--text); }}
+  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }}
+  .content th {{ background: var(--dawn); color: #fff; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }}
+  .content th:first-child {{ border-radius: 6px 0 0 0; }}
+  .content th:last-child {{ border-radius: 0 6px 0 0; }}
+  .content td {{ padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--gray); }}
+  .content tr:hover td {{ background: rgba(142,169,201,0.05); }}
+  .content blockquote {{ border-left: 3px solid var(--pink); padding: 0.8rem 1.2rem; margin: 1rem 0; background: rgba(217,162,160,0.06); border-radius: 0 6px 6px 0; }}
+  .content blockquote p {{ color: var(--text-light); }}
+  .content pre {{ background: #F8F5F0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; border: 1px solid var(--gray); }}
+  .content code {{ font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: #F0ECE6; padding: 0.15rem 0.4rem; border-radius: 4px; }}
+  .content pre code {{ background: none; padding: 0; }}
+  .content ul, .content ol {{ margin: 0.5rem 0; padding-left: 1.5rem; }}
+  .content li {{ margin: 0.3rem 0; }}
+  .content hr {{ border: none; border-top: 1px solid var(--gray); margin: 2rem 0; }}
+  .content img {{ max-width: 100%; border-radius: 8px; margin: 1rem 0; }}
+  .content strong {{ font-weight: 500; color: var(--deep); }}
+  
+  /* Footer */
+  .footer {{ text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.8rem; max-width: 1100px; margin: 0 auto; }}
+  
+  @media (max-width: 768px) {{
+    .layout {{ flex-direction: column; }}
+    .sidebar {{ width: 100%; }}
+    .content {{ padding: 1.5rem; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="nav-inner">
+    <a href="/xilan-knowledgebase/" class="nav-brand">晞蓝</a>
+    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
+    <a href="/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
+    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">活动</a>
+    <a href="/xilan-knowledgebase/xilan-brand-identity.html">品牌</a>
+  </div>
+</div>
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <h3>📖 晞蓝</h3>
+      <a href="/xilan-knowledgebase/xilan-art-store-overview.html" class="overview">总览</a>
+      <a href="/xilan-knowledgebase/xilan-brand-identity.html" class="">品牌身份</a>
+      <a href="/xilan-knowledgebase/xilan-selection-and-products.html" class="">选品与产品线</a>
+      <a href="/xilan-knowledgebase/xilan-visual-and-content-language.html" class="">视觉与内容语言</a>
+    </div>
+    <div class="sidebar-section">
+      <h3>🎨 生气画会</h3>
+      <a href="/xilan-knowledgebase/shengqi-painting-society.html" class="">生气画会</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-beyond.html" class="">她与她之外</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-after.html" class="">看见她之后</a>
+      <a href="/xilan-knowledgebase/xilan-stardust-bracelet.html" class="">星尘落款</a>
+    </div>
+  </div>
+  <div class="content">
+<h1>晞蓝艺术商店总览</h1>
+<h2>入口导航</h2>
+<ul>
+<li><a href="xilan-brand-identity.md">晞蓝品牌身份</a></li>
+<li><a href="xilan-selection-and-products.md">晞蓝选品与产品线</a></li>
+<li><a href="xilan-visual-and-content-language.md">晞蓝视觉与内容语言</a></li>
+<li><a href="xilan-see-her-beyond.md">她与她之外</a></li>
+<li><a href="xilan-see-her-after.md">看见她之后</a></li>
+<li><a href="xilan-stardust-bracelet.md">星尘落款</a></li>
+<li><a href="../sources/xilan/internal-materials.md">晞蓝内部资料来源卡</a></li>
+</ul>
+<h2>项目身份</h2>
+<p>晞蓝艺术商店（Light Blue Art Hub）是由生气画会延伸出的生活美学空间，也是生气画会的第一个线下实体店。</p>
+<p>相关关系当前可理解为：</p>
+<ul>
+<li>生气画会：艺术小组与内容母体</li>
+<li>晞蓝艺术商店：面向公众的商店与活动空间</li>
+<li>回书房：相关注册主体</li>
+</ul>
+<h2>名称由来</h2>
+<p>“晞蓝 LightBlue”取自黎明破晓时的天空颜色，介于夜与昼之间，安静却蓄满光。</p>
+<p>这个名字对应了晞蓝的整体气质：温和、克制、耐心，同时保有亮度与生命感。</p>
+<h2>核心主张</h2>
+<p>我们倡导力所能及的收藏，相信每个人都有一个与艺术相遇的机会。</p>
+<p>晞蓝不只售卖生气画会的画作，也挑选适合长期主义者的生活器皿，例如漆盘、茶具、文房盒等。挑选标准不仅关乎审美，也关乎是否适合本地气候与生活习惯，是否能被长久使用。</p>
+<p>我们相信，好东西值得挑得久一点，用得久一点。</p>
+<h2>商店立场</h2>
+<p>春节期间，看到心爱的藏品被大小朋友挑走，那种“众乐乐”的感觉给了团队继续做下去的信心。</p>
+<p>晞蓝希望成为一个地球友好的、只售长效设计产品的艺术商店。这里的商业不只是售卖行为，也是伦理实验与价值记录的一部分。</p>
+<h2>行动排序</h2>
+<p>晞蓝艺术商店可以被理解为“社会 -&gt; 地方 -&gt; 自我 -&gt; 生意”的行动排序的显影。</p>
+<p>每一件产品的售出、每一场活动的发生，都是实践作品的可见章节。商业不是与价值分离的结果，而是价值被检验、被记录、被共享的过程。</p>
+<h2>选品与内容方向</h2>
+<p>晞蓝精选艺术品与生活器物，希望让审美不只停留在墙上或橱窗里，而是可以被触摸、被佩戴、被带回家。</p>
+<p>当前已知的方向包括：</p>
+<ul>
+<li>生气画会的画作</li>
+<li>日本漆器</li>
+<li>佛山陶艺</li>
+<li>艺术史主题珠串</li>
+<li>摄影展览及相关内容</li>
+</ul>
+<h2>2026 主题</h2>
+<p>2026 年，晞蓝以&quot;重返千禧&quot;为主题。</p>
+<p>围绕这个主题，计划通过展览、弹唱会、庭院活动、社群共创等方式，把&quot;好的生活就是好的教育&quot;落到日常，并持续举办&quot;晞日&quot;&quot;夜蓝静&quot;等跨场域活动，让艺术经验进入共享对话。</p>
+<h3>2026 年活动记录</h3>
+<p><strong>2月21-22日（大年初五-初六）— 首场演出 🎵</strong></p>
+<p>香港独立音乐人 <strong>何英玮（Ewan Ho）</strong> 弹唱会《说真话特别容易被发现》分上下册上演：</p>
+<ul>
+<li>上册：2月21日（大年初五）19:45</li>
+<li>下册：2月22日（大年初六）13:40</li>
+<li>地点：阳江市阳东区永安中路15号 LightBlue晞蓝艺术商店</li>
+<li>这是晞蓝艺术商店的<strong>首秀</strong>，筹备团队大多是 00 后和准 00 后</li>
+<li>为了千禧年视觉效果，找来了两台显像管老电视</li>
+<li>何英玮用老式录像机直出画面，&quot;得到一个 20 年前的何英玮&quot;</li>
+<li>高潮：乐手走进洗手间演奏，最终 10 个人挤进那个两三平方米的空间</li>
+<li>观众卷毛钊说&quot;连气味都勾起她在香港住劏房的记忆&quot;</li>
+<li>演出周边&quot;真话容器&quot;在小程序售卖</li>
+<li>来源：晞蓝艺术商店公众号《世界忙忙乱乱音乐缝缝补补》</li>
+</ul>
+<p><strong>5月10日 — 母亲节放映</strong></p>
+<p>见 <a href="xilan-see-her-beyond.md">她与她之外</a></p>
+<h2>生气画会背景</h2>
+<p>生气画会成立于 2017 年，是一个阳江在地艺术小组。</p>
+<p>成员由艺术工作者组成，通过对生活尽可能地在场而尽可能地取消边界建立联结，通过修整关系来理解世界，通过文献梳理承上启下。</p>
+<h2>后续可继续补充</h2>
+<ul>
+<li>对外一句话介绍</li>
+<li>完整品牌简介：见 <a href="xilan-brand-identity.md">晞蓝品牌身份</a></li>
+<li>品牌关键词与视觉气质：见 <a href="xilan-visual-and-content-language.md">晞蓝视觉与内容语言</a></li>
+<li>商品线与选品标准：见 <a href="xilan-selection-and-products.md">晞蓝选品与产品线</a></li>
+<li>活动记录：见 <a href="xilan-see-her-beyond.md">她与她之外</a></li>
+<li>内容转化项目：见 <a href="xilan-see-her-after.md">看见她之后</a></li>
+<li>线上渠道与内容计划</li>
+<li>团队分工与组织关系</li>
+</ul>
+  </div>
+</div>
+<div class="footer">
+  晞蓝 · 知识库 &copy; 2026 · 由生气画会维护
+</div>
+</body>
+</html>

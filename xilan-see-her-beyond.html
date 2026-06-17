@@ -4,64 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>她与她之外 - 晞蓝·知识库</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {{
-    --bg: #f7f1ea; --text: #25323a; --accent: #8ea9c9;
-    --pink: #d9a2a0; --amber: #d8873d; --gray: #e0d8ce;
+    --dawn: #8EAFC9;
+    --deep: #25323A;
+    --warm: #F4EDE5;
+    --pink: #D9A2A0;
+    --amber: #D8873D;
+    --light: #FAF6F0;
+    --gray: #E8E0D6;
+    --text: #2C2C2C;
+    --text-light: #666;
   }}
   * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }}
-  .nav {{ background: var(--accent); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
-  .nav-inner {{ max-width: 1000px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 2rem; align-items: center; }}
-  .nav a {{ color: white; text-decoration: none; font-weight: 500; }}
-  .nav a:hover {{ text-decoration: underline; }}
-  .nav .brand {{ font-size: 1.2rem; font-weight: 700; }}
-  .container {{ max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }}
-  .sidebar {{ float: left; width: 250px; background: white; border-radius: 8px; padding: 1rem; margin-right: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
-  .sidebar h3 {{ color: var(--accent); font-size: 0.9rem; margin: 1rem 0 0.5rem; }}
-  .sidebar a {{ display: block; padding: 0.3rem 0.5rem; color: var(--text); text-decoration: none; font-size: 0.9rem; border-radius: 4px; }}
-  .sidebar a:hover {{ background: var(--gray); }}
-  .content {{ margin-left: 270px; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); min-height: 60vh; }}
-  .content h1 {{ color: var(--accent); margin-bottom: 1rem; }}
-  .content h2 {{ border-bottom: 2px solid var(--gray); padding-bottom: 0.3rem; margin: 1.5rem 0 0.5rem; }}
-  .content p {{ margin: 0.5rem 0; }}
-  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; }}
-  .content th, .content td {{ border: 1px solid var(--gray); padding: 0.5rem; text-align: left; }}
-  .content th {{ background: var(--accent); color: white; }}
-  pre {{ background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; }}
-  code {{ background: #f0f0f0; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }}
-  img {{ max-width: 100%; border-radius: 4px; }}
-  .footer {{ text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; clear: both; }}
-  blockquote {{ border-left: 4px solid var(--pink); padding-left: 1rem; margin: 1rem 0; color: #666; }}
-  @media (max-width: 768px) {{ .sidebar {{ float: none; width: 100%; margin: 0 0 1rem; }} .content {{ margin-left: 0; }} }}
+  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--light); color: var(--text); line-height: 1.9; font-weight: 300; }}
+  a {{ color: var(--dawn); text-decoration: none; }}
+  a:hover {{ color: var(--pink); }}
+  
+  /* Navigation */
+  .nav {{ background: var(--deep); padding: 0; position: sticky; top: 0; z-index: 100; }}
+  .nav-inner {{ max-width: 1100px; margin: 0 auto; display: flex; align-items: center; padding: 0 1.5rem; height: 56px; gap: 0.5rem; }}
+  .nav-brand {{ color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; margin-right: 2rem; }}
+  .nav-brand:hover {{ color: var(--dawn); }}
+  .nav a:not(.nav-brand) {{ color: rgba(255,255,255,0.7); font-size: 0.85rem; padding: 0.3rem 0.6rem; border-radius: 4px; }}
+  .nav a:not(.nav-brand):hover {{ color: #fff; background: rgba(255,255,255,0.1); }}
+  
+  /* Layout */
+  .layout {{ display: flex; max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; gap: 2rem; }}
+  .sidebar {{ width: 220px; flex-shrink: 0; }}
+  .sidebar-section {{ margin-bottom: 1.5rem; }}
+  .sidebar h3 {{ font-size: 0.8rem; color: var(--dawn); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; padding: 0.5rem 0.8rem; background: rgba(142,169,201,0.08); border-radius: 6px; }}
+  .sidebar a {{ display: block; padding: 0.4rem 0.8rem; font-size: 0.88rem; color: var(--text); border-radius: 6px; margin-bottom: 2px; }}
+  .sidebar a:hover {{ background: var(--gray); color: var(--deep); }}
+  .sidebar a.active {{ background: var(--dawn); color: #fff; }}
+  
+  /* Content */
+  .content {{ flex: 1; min-width: 0; background: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
+  .content h1 {{ font-family: 'Noto Serif SC', serif; font-weight: 600; font-size: 2rem; color: var(--deep); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--gray); }}
+  .content h2 {{ font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 1.4rem; color: var(--dawn); margin: 2rem 0 0.8rem; }}
+  .content h3 {{ font-size: 1.1rem; font-weight: 500; color: var(--deep); margin: 1.5rem 0 0.5rem; }}
+  .content p {{ margin: 0.6rem 0; color: var(--text); }}
+  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }}
+  .content th {{ background: var(--dawn); color: #fff; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }}
+  .content th:first-child {{ border-radius: 6px 0 0 0; }}
+  .content th:last-child {{ border-radius: 0 6px 0 0; }}
+  .content td {{ padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--gray); }}
+  .content tr:hover td {{ background: rgba(142,169,201,0.05); }}
+  .content blockquote {{ border-left: 3px solid var(--pink); padding: 0.8rem 1.2rem; margin: 1rem 0; background: rgba(217,162,160,0.06); border-radius: 0 6px 6px 0; }}
+  .content blockquote p {{ color: var(--text-light); }}
+  .content pre {{ background: #F8F5F0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; border: 1px solid var(--gray); }}
+  .content code {{ font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: #F0ECE6; padding: 0.15rem 0.4rem; border-radius: 4px; }}
+  .content pre code {{ background: none; padding: 0; }}
+  .content ul, .content ol {{ margin: 0.5rem 0; padding-left: 1.5rem; }}
+  .content li {{ margin: 0.3rem 0; }}
+  .content hr {{ border: none; border-top: 1px solid var(--gray); margin: 2rem 0; }}
+  .content img {{ max-width: 100%; border-radius: 8px; margin: 1rem 0; }}
+  .content strong {{ font-weight: 500; color: var(--deep); }}
+  
+  /* Footer */
+  .footer {{ text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.8rem; max-width: 1100px; margin: 0 auto; }}
+  
+  @media (max-width: 768px) {{
+    .layout {{ flex-direction: column; }}
+    .sidebar {{ width: 100%; }}
+    .content {{ padding: 1.5rem; }}
+  }}
 </style>
 </head>
 <body>
 <div class="nav">
   <div class="nav-inner">
-    <a href="/xilan-knowledgebase/" class="brand">晞蓝 · 知识库</a>
-    <a href="/xilan-knowledgebase/">首页</a>
-    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">晞蓝</a>
+    <a href="/xilan-knowledgebase/" class="nav-brand">晞蓝</a>
+    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
     <a href="/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-    <a href="/xilan-knowledgebase/index.html">索引</a>
+    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">活动</a>
+    <a href="/xilan-knowledgebase/xilan-brand-identity.html">品牌</a>
   </div>
 </div>
-<div class="container">
+<div class="layout">
   <div class="sidebar">
-    <h3>📖 晞蓝</h3>
-    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
-    <a href="/xilan-knowledgebase/xilan-brand-identity.html">品牌身份</a>
-    <a href="/xilan-knowledgebase/xilan-selection-and-products.html">选品与产品线</a>
-    <a href="/xilan-knowledgebase/xilan-visual-and-content-language.html">视觉与内容语言</a>
-    <h3>🎨 生气画会</h3>
-    <a href="/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-after.html">看见她之后</a>
-    <a href="/xilan-knowledgebase/xilan-stardust-bracelet.html">星尘落款</a>
+    <div class="sidebar-section">
+      <h3>📖 晞蓝</h3>
+      <a href="/xilan-knowledgebase/xilan-art-store-overview.html" class="beyond">总览</a>
+      <a href="/xilan-knowledgebase/xilan-brand-identity.html" class="">品牌身份</a>
+      <a href="/xilan-knowledgebase/xilan-selection-and-products.html" class="">选品与产品线</a>
+      <a href="/xilan-knowledgebase/xilan-visual-and-content-language.html" class="">视觉与内容语言</a>
+    </div>
+    <div class="sidebar-section">
+      <h3>🎨 生气画会</h3>
+      <a href="/xilan-knowledgebase/shengqi-painting-society.html" class="">生气画会</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-beyond.html" class="active">她与她之外</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-after.html" class="">看见她之后</a>
+      <a href="/xilan-knowledgebase/xilan-stardust-bracelet.html" class="">星尘落款</a>
+    </div>
   </div>
   <div class="content">
-    <h1>她与她之外</h1>
+<h1>她与她之外</h1>
 <h2>Event Definition</h2>
 <p>《她与她之外》是晞蓝艺术商店在 2026 年母亲节推出的特别放映活动。活动围绕“母亲”和“女儿如何看见母亲”展开，将家庭影像、母女关系、照护、身体、偏见和距离放回影像与现场对话之中。</p>
 <p>它是 <a href="xilan-see-her-after.md">看见她之后</a> 短视频项目的前置活动现场，也是爱礼月与“星尘落款”礼物叙事的情感来源之一。</p>
@@ -95,58 +134,13 @@
 <p>活动公告 PDF 确认的片单顺序与基础信息如下：</p>
 <table>
 <tr>
-<th>辑次</th>
-<th>片名</th>
-<th>英文名</th>
-<th>作者/导演</th>
-<th>时长</th>
-<th>年份</th>
-<th>类型/地区</th>
-</tr>
-<tr>
-<td>第一辑：成为母亲</td>
-<td>《成为母亲》</td>
-<td>Becoming Mother</td>
-<td>董臻洁 Dong Zhenjie</td>
-<td>18min</td>
-<td>2025</td>
-<td>纪录片 / 中国大陆</td>
-</tr>
-<tr>
-<td>第二辑：看见与误解</td>
-<td>《框景之外》</td>
-<td>Unseen Between Us</td>
-<td>陈泊言 Chen Boyan</td>
-<td>15min</td>
-<td>2026</td>
-<td>纪录片 / 中国大陆</td>
-</tr>
-<tr>
-<td>第二辑：看见与误解</td>
-<td>《回放》</td>
-<td>Play Back</td>
-<td>宝珠 Baozhu</td>
-<td>25min</td>
-<td>2023</td>
-<td>纪录片 / 中国大陆</td>
-</tr>
-<tr>
-<td>第三辑：边界与角色</td>
-<td>《边界植物》</td>
-<td>Marginal Plants</td>
-<td>陈可 Kikko Chen</td>
-<td>17min</td>
-<td>2026</td>
-<td>纪录片 / 中国大陆</td>
-</tr>
-<tr>
-<td>第三辑：边界与角色</td>
-<td>《影中人》</td>
-<td>As We Part, As We Return</td>
-<td>李何美朵 Lynrina Li</td>
-<td>18min</td>
-<td>2025</td>
-<td>纪录片 / 中国大陆</td>
+<th>第三辑：边界与角色</th>
+<th>《影中人》</th>
+<th>As We Part, As We Return</th>
+<th>李何美朵 Lynrina Li</th>
+<th>18min</th>
+<th>2025</th>
+<th>纪录片 / 中国大陆</th>
 </tr>
 </table>
 <p>公告还包含每部影片的影片简介、导演阐述和作者简介。当前知识库先记录片单、结构和核心主题；完整正文可在需要写发布稿或活动档案时继续细化。</p>
@@ -208,7 +202,7 @@
   </div>
 </div>
 <div class="footer">
-  晞蓝 · 知识库 &copy; 2026 | 由生气画会-回书房维护
+  晞蓝 · 知识库 &copy; 2026 · 由生气画会维护
 </div>
 </body>
 </html>

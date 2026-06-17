@@ -4,64 +4,103 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>生气画会 - 晞蓝·知识库</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root {{
-    --bg: #f7f1ea; --text: #25323a; --accent: #8ea9c9;
-    --pink: #d9a2a0; --amber: #d8873d; --gray: #e0d8ce;
+    --dawn: #8EAFC9;
+    --deep: #25323A;
+    --warm: #F4EDE5;
+    --pink: #D9A2A0;
+    --amber: #D8873D;
+    --light: #FAF6F0;
+    --gray: #E8E0D6;
+    --text: #2C2C2C;
+    --text-light: #666;
   }}
   * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }}
-  .nav {{ background: var(--accent); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
-  .nav-inner {{ max-width: 1000px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 2rem; align-items: center; }}
-  .nav a {{ color: white; text-decoration: none; font-weight: 500; }}
-  .nav a:hover {{ text-decoration: underline; }}
-  .nav .brand {{ font-size: 1.2rem; font-weight: 700; }}
-  .container {{ max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }}
-  .sidebar {{ float: left; width: 250px; background: white; border-radius: 8px; padding: 1rem; margin-right: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
-  .sidebar h3 {{ color: var(--accent); font-size: 0.9rem; margin: 1rem 0 0.5rem; }}
-  .sidebar a {{ display: block; padding: 0.3rem 0.5rem; color: var(--text); text-decoration: none; font-size: 0.9rem; border-radius: 4px; }}
-  .sidebar a:hover {{ background: var(--gray); }}
-  .content {{ margin-left: 270px; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); min-height: 60vh; }}
-  .content h1 {{ color: var(--accent); margin-bottom: 1rem; }}
-  .content h2 {{ border-bottom: 2px solid var(--gray); padding-bottom: 0.3rem; margin: 1.5rem 0 0.5rem; }}
-  .content p {{ margin: 0.5rem 0; }}
-  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; }}
-  .content th, .content td {{ border: 1px solid var(--gray); padding: 0.5rem; text-align: left; }}
-  .content th {{ background: var(--accent); color: white; }}
-  pre {{ background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; }}
-  code {{ background: #f0f0f0; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }}
-  img {{ max-width: 100%; border-radius: 4px; }}
-  .footer {{ text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; clear: both; }}
-  blockquote {{ border-left: 4px solid var(--pink); padding-left: 1rem; margin: 1rem 0; color: #666; }}
-  @media (max-width: 768px) {{ .sidebar {{ float: none; width: 100%; margin: 0 0 1rem; }} .content {{ margin-left: 0; }} }}
+  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--light); color: var(--text); line-height: 1.9; font-weight: 300; }}
+  a {{ color: var(--dawn); text-decoration: none; }}
+  a:hover {{ color: var(--pink); }}
+  
+  /* Navigation */
+  .nav {{ background: var(--deep); padding: 0; position: sticky; top: 0; z-index: 100; }}
+  .nav-inner {{ max-width: 1100px; margin: 0 auto; display: flex; align-items: center; padding: 0 1.5rem; height: 56px; gap: 0.5rem; }}
+  .nav-brand {{ color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing: 1px; margin-right: 2rem; }}
+  .nav-brand:hover {{ color: var(--dawn); }}
+  .nav a:not(.nav-brand) {{ color: rgba(255,255,255,0.7); font-size: 0.85rem; padding: 0.3rem 0.6rem; border-radius: 4px; }}
+  .nav a:not(.nav-brand):hover {{ color: #fff; background: rgba(255,255,255,0.1); }}
+  
+  /* Layout */
+  .layout {{ display: flex; max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; gap: 2rem; }}
+  .sidebar {{ width: 220px; flex-shrink: 0; }}
+  .sidebar-section {{ margin-bottom: 1.5rem; }}
+  .sidebar h3 {{ font-size: 0.8rem; color: var(--dawn); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; padding: 0.5rem 0.8rem; background: rgba(142,169,201,0.08); border-radius: 6px; }}
+  .sidebar a {{ display: block; padding: 0.4rem 0.8rem; font-size: 0.88rem; color: var(--text); border-radius: 6px; margin-bottom: 2px; }}
+  .sidebar a:hover {{ background: var(--gray); color: var(--deep); }}
+  .sidebar a.active {{ background: var(--dawn); color: #fff; }}
+  
+  /* Content */
+  .content {{ flex: 1; min-width: 0; background: #fff; border-radius: 12px; padding: 2.5rem; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }}
+  .content h1 {{ font-family: 'Noto Serif SC', serif; font-weight: 600; font-size: 2rem; color: var(--deep); margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 2px solid var(--gray); }}
+  .content h2 {{ font-family: 'Noto Serif SC', serif; font-weight: 500; font-size: 1.4rem; color: var(--dawn); margin: 2rem 0 0.8rem; }}
+  .content h3 {{ font-size: 1.1rem; font-weight: 500; color: var(--deep); margin: 1.5rem 0 0.5rem; }}
+  .content p {{ margin: 0.6rem 0; color: var(--text); }}
+  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.9rem; }}
+  .content th {{ background: var(--dawn); color: #fff; padding: 0.6rem 0.8rem; text-align: left; font-weight: 500; }}
+  .content th:first-child {{ border-radius: 6px 0 0 0; }}
+  .content th:last-child {{ border-radius: 0 6px 0 0; }}
+  .content td {{ padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--gray); }}
+  .content tr:hover td {{ background: rgba(142,169,201,0.05); }}
+  .content blockquote {{ border-left: 3px solid var(--pink); padding: 0.8rem 1.2rem; margin: 1rem 0; background: rgba(217,162,160,0.06); border-radius: 0 6px 6px 0; }}
+  .content blockquote p {{ color: var(--text-light); }}
+  .content pre {{ background: #F8F5F0; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.85rem; border: 1px solid var(--gray); }}
+  .content code {{ font-family: 'JetBrains Mono', monospace; font-size: 0.85em; background: #F0ECE6; padding: 0.15rem 0.4rem; border-radius: 4px; }}
+  .content pre code {{ background: none; padding: 0; }}
+  .content ul, .content ol {{ margin: 0.5rem 0; padding-left: 1.5rem; }}
+  .content li {{ margin: 0.3rem 0; }}
+  .content hr {{ border: none; border-top: 1px solid var(--gray); margin: 2rem 0; }}
+  .content img {{ max-width: 100%; border-radius: 8px; margin: 1rem 0; }}
+  .content strong {{ font-weight: 500; color: var(--deep); }}
+  
+  /* Footer */
+  .footer {{ text-align: center; padding: 2rem; color: var(--text-light); font-size: 0.8rem; max-width: 1100px; margin: 0 auto; }}
+  
+  @media (max-width: 768px) {{
+    .layout {{ flex-direction: column; }}
+    .sidebar {{ width: 100%; }}
+    .content {{ padding: 1.5rem; }}
+  }}
 </style>
 </head>
 <body>
 <div class="nav">
   <div class="nav-inner">
-    <a href="/xilan-knowledgebase/" class="brand">晞蓝 · 知识库</a>
-    <a href="/xilan-knowledgebase/">首页</a>
-    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">晞蓝</a>
+    <a href="/xilan-knowledgebase/" class="nav-brand">晞蓝</a>
+    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
     <a href="/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-    <a href="/xilan-knowledgebase/index.html">索引</a>
+    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">活动</a>
+    <a href="/xilan-knowledgebase/xilan-brand-identity.html">品牌</a>
   </div>
 </div>
-<div class="container">
+<div class="layout">
   <div class="sidebar">
-    <h3>📖 晞蓝</h3>
-    <a href="/xilan-knowledgebase/xilan-art-store-overview.html">总览</a>
-    <a href="/xilan-knowledgebase/xilan-brand-identity.html">品牌身份</a>
-    <a href="/xilan-knowledgebase/xilan-selection-and-products.html">选品与产品线</a>
-    <a href="/xilan-knowledgebase/xilan-visual-and-content-language.html">视觉与内容语言</a>
-    <h3>🎨 生气画会</h3>
-    <a href="/xilan-knowledgebase/shengqi-painting-society.html">生气画会</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-beyond.html">她与她之外</a>
-    <a href="/xilan-knowledgebase/xilan-see-her-after.html">看见她之后</a>
-    <a href="/xilan-knowledgebase/xilan-stardust-bracelet.html">星尘落款</a>
+    <div class="sidebar-section">
+      <h3>📖 晞蓝</h3>
+      <a href="/xilan-knowledgebase/xilan-art-store-overview.html" class="shengqi">总览</a>
+      <a href="/xilan-knowledgebase/xilan-brand-identity.html" class="">品牌身份</a>
+      <a href="/xilan-knowledgebase/xilan-selection-and-products.html" class="">选品与产品线</a>
+      <a href="/xilan-knowledgebase/xilan-visual-and-content-language.html" class="">视觉与内容语言</a>
+    </div>
+    <div class="sidebar-section">
+      <h3>🎨 生气画会</h3>
+      <a href="/xilan-knowledgebase/shengqi-painting-society.html" class="active">生气画会</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-beyond.html" class="">她与她之外</a>
+      <a href="/xilan-knowledgebase/xilan-see-her-after.html" class="">看见她之后</a>
+      <a href="/xilan-knowledgebase/xilan-stardust-bracelet.html" class="">星尘落款</a>
+    </div>
   </div>
   <div class="content">
-    <h1>生气画会</h1>
+<h1>生气画会</h1>
 <h2>Identity</h2>
 <p>生气画会成立于 2017 年，是一个阳江在地艺术小组。</p>
 <p>成员由艺术工作者组成，通过对生活尽可能地在场而尽可能地取消边界建立联结，通过修整关系来理解世界，通过文献梳理承上启下。</p>
@@ -73,63 +112,15 @@
 <h3>音乐人/乐队</h3>
 <table>
 <tr>
-<th>名称</th>
-<th>备注</th>
-</tr>
-<tr>
-<td><strong>何英玮（Ewan Ho）</strong></td>
-<td>香港独立音乐人，2026 年晞蓝首演</td>
-</tr>
-<tr>
-<td><strong>野草寮</strong></td>
-<td>潮汕乐队，2025 年 6 月阳江了园巡演</td>
-</tr>
-<tr>
-<td><strong>他山做法</strong></td>
-<td>合作音乐项目</td>
-</tr>
-<tr>
-<td><strong>六甲番</strong></td>
-<td>合作乐队</td>
-</tr>
-<tr>
-<td><strong>黑柴</strong></td>
-<td>合作音乐人</td>
-</tr>
-<tr>
-<td><strong>陈创丰</strong></td>
-<td>合作音乐人</td>
-</tr>
-<tr>
-<td><strong>非常大自然</strong></td>
-<td>合作乐队/项目</td>
+<th><strong>非常大自然</strong></th>
+<th>合作乐队/项目</th>
 </tr>
 </table>
 <h3>文创/空间</h3>
 <table>
 <tr>
-<th>名称</th>
-<th>备注</th>
-</tr>
-<tr>
-<td>意思工作室</td>
-<td>文创合作</td>
-</tr>
-<tr>
-<td>旮旯文创</td>
-<td>文创合作</td>
-</tr>
-<tr>
-<td>在地里小酒馆</td>
-<td>阳江本地空间</td>
-</tr>
-<tr>
-<td>苦爽计划</td>
-<td>合作项目</td>
-</tr>
-<tr>
-<td>小熊冲啊</td>
-<td>合作项目/品牌</td>
+<th>小熊冲啊</th>
+<th>合作项目/品牌</th>
 </tr>
 </table>
 <p>（来源：生气画会公众号《你会喜欢笨蛋吗？》推文底部合作伙伴列表）</p>
@@ -165,128 +156,16 @@
 <p>以下为搜狗微信已索引的 ArtSunTree生气画会 公众号文章：</p>
 <table>
 <tr>
-<th>标题</th>
-<th>时间（估计）</th>
-</tr>
-<tr>
-<td>回顾2018生气画会，感谢相遇</td>
-<td>2021 年</td>
-</tr>
-<tr>
-<td>生气画会暑期研学——野生大熊猫国家自然保护区独立艺术营</td>
-<td>2022 年</td>
-</tr>
-<tr>
-<td>7月贵州·侗寨 \</td>
-<td>生气画会暑期游学</td>
-<td>2023 年</td>
-</tr>
-<tr>
-<td>这就是素描！生气画会学生作品赏析</td>
-<td>2024 年</td>
-</tr>
-<tr>
-<td>解密\</td>
-<td>在生气画会小班艺术课堂,一个学期能学到什么?</td>
-<td>2024 年</td>
-</tr>
-<tr>
-<td>展览预告II\</td>
-<td>群青日常</td>
-<td>待确认</td>
-</tr>
-<tr>
-<td>生气画会 \</td>
-<td>意大利博物馆艺术游学正式招募!</td>
-<td>2024 年</td>
-</tr>
-<tr>
-<td>百鸟朝凤（传统嵌瓷工艺分享）</td>
-<td>待确认</td>
+<th>百鸟朝凤（传统嵌瓷工艺分享）</th>
+<th>待确认</th>
 </tr>
 </table>
 <h2>已知活动时间线</h2>
 <table>
 <tr>
-<th>时间</th>
-<th>事件</th>
-<th>来源</th>
-</tr>
-<tr>
-<td>2017</td>
-<td>生气画会成立</td>
-<td>内部资料</td>
-</tr>
-<tr>
-<td>~2018</td>
-<td>生气画会工作室活动活跃</td>
-<td>公众号回顾文章</td>
-</tr>
-<tr>
-<td>2021-06</td>
-<td>公众号发布《回顾2018生气画会，感谢相遇》</td>
-<td>搜狗微信搜索</td>
-</tr>
-<tr>
-<td>2022-06</td>
-<td>暑期研学：野生大熊猫国家自然保护区独立艺术营</td>
-<td>搜狗微信搜索</td>
-</tr>
-<tr>
-<td>2023-05</td>
-<td>7月贵州·侗寨暑期游学，开启大地艺术营</td>
-<td>搜狗微信搜索</td>
-</tr>
-<tr>
-<td>2024-02</td>
-<td>参与&quot;阳江组合&quot;美术馆展览《我爱阳江·商业市集》，生气剧社演出《雾都孤儿》音乐剧。与郑国谷、阳江组合等同场</td>
-<td>阳江日报</td>
-</tr>
-<tr>
-<td>2024</td>
-<td>年度展览《立体主义之后》，收藏画作引起&quot;抢扫&quot;</td>
-<td>生气画会公众号</td>
-</tr>
-<tr>
-<td>2024-09</td>
-<td>意大利博物馆艺术游学招募；小班艺术课堂学生作品展</td>
-<td>搜狗微信搜索</td>
-</tr>
-<tr>
-<td>2025-02</td>
-<td>开年展览《你会喜欢笨蛋吗？》——在庙里办展，有电影放映和分享会</td>
-<td>淘艺平台</td>
-</tr>
-<tr>
-<td>2025-06-21</td>
-<td>野草寮乐队《猛走》巡演首站在阳江了园美术馆，距郑国谷美术馆很近</td>
-<td>生气画会转载野草寮</td>
-</tr>
-<tr>
-<td>2025-07</td>
-<td>&quot;生气的朋友&quot;系列首发《吴文礼 \</td>
-<td>一二三，游记》</td>
-<td>生气的朋友公众号</td>
-</tr>
-<tr>
-<td>2026-02-21</td>
-<td>晞蓝艺术商店首场演出——香港音乐人何英玮弹唱会《说真话特别容易被发现》上册，大年初五晚</td>
-<td>晞蓝公众号</td>
-</tr>
-<tr>
-<td>2026-02-22</td>
-<td>何英玮弹唱会下册，大年初六下午（两场均售罄/爆满）</td>
-<td>晞蓝公众号</td>
-</tr>
-<tr>
-<td>2026-05</td>
-<td>母亲节特别放映《她与她之外》（与 FamilyLens 合作于晞蓝）</td>
-<td>内部资料 + 微信PDF</td>
-</tr>
-<tr>
-<td>2026</td>
-<td>晞蓝艺术商店以&quot;重返千禧&quot;为主题展开活动</td>
-<td>内部资料</td>
+<th>2026</th>
+<th>晞蓝艺术商店以&quot;重返千禧&quot;为主题展开活动</th>
+<th>内部资料</th>
 </tr>
 </table>
 <h2>已知活动方向</h2>
@@ -324,27 +203,10 @@
 <p><strong>已知文章：</strong></p>
 <table>
 <tr>
-<th>标题</th>
-<th>发布账号</th>
-<th>时间</th>
-</tr>
-<tr>
-<td>二月的纪念 \</td>
-<td>重逢在春日的诗歌里</td>
-<td>重启中的小剁</td>
-<td>2025-03</td>
-</tr>
-<tr>
-<td>吴文礼 \</td>
-<td>一二三，游记</td>
-<td>生气的朋友</td>
-<td>2025-07</td>
-</tr>
-<tr>
-<td>在家春游说明书 \</td>
-<td>文艺暴走到薰蘭</td>
-<td>（待确认）</td>
-<td>（待确认）</td>
+<th>在家春游说明书 \</th>
+<th>文艺暴走到薰蘭</th>
+<th>（待确认）</th>
+<th>（待确认）</th>
 </tr>
 </table>
 <p>（来源：生气画会-回书房关联公众号）</p>
@@ -385,65 +247,9 @@
 <h2>公开来源索引</h2>
 <table>
 <tr>
-<th>来源</th>
-<th>类型</th>
-<th>链接/位置</th>
-</tr>
-<tr>
-<td>ArtSunTree生气画会公众号</td>
-<td>微信</td>
-<td>搜狗微信搜索&quot;生气画会&quot;可查</td>
-</tr>
-<tr>
-<td>生气画会-回书房公众号</td>
-<td>微信</td>
-<td>关联账号，可查转载内容</td>
-</tr>
-<tr>
-<td>晞蓝艺术商店公众号</td>
-<td>微信</td>
-<td>活动推文（首演/放映）</td>
-</tr>
-<tr>
-<td>生气的朋友公众号</td>
-<td>微信</td>
-<td>文艺暴走系列内容</td>
-</tr>
-<tr>
-<td>重启中的小剁公众号</td>
-<td>微信</td>
-<td>文艺暴走系列内容</td>
-</tr>
-<tr>
-<td>广东时代美术馆《叱咤于街中》</td>
-<td>展览（2022）</td>
-<td>https://www.timesmuseum.org/cn/program</td>
-</tr>
-<tr>
-<td>阳江日报·漠阳文化</td>
-<td>媒体（2024-03-01）</td>
-<td>https://m.yjrb.com.cn/marticles/mywh/20240301/474384.html</td>
-</tr>
-<tr>
-<td>阳江日报·专题</td>
-<td>媒体（2025-02-21）</td>
-<td>https://m.yjrb.com.cn/marticles/yaowen/20250221/547698.html</td>
-</tr>
-<tr>
-<td>阳江广播电视台</td>
-<td>媒体（2022-07-09）</td>
-<td>微信文章&quot;天南地北阳江人 \</td>
-<td>嗨！阳江青年&quot;</td>
-</tr>
-<tr>
-<td>淘艺平台</td>
-<td>艺术资讯（2025）</td>
-<td>https://www.taoart.com/information/detail/56832.htm</td>
-</tr>
-<tr>
-<td>澎湃新闻·家庭影像FamilyLens</td>
-<td>媒体（2025-2026）</td>
-<td>https://www.thepaper.cn</td>
+<th>澎湃新闻·家庭影像FamilyLens</th>
+<th>媒体（2025-2026）</th>
+<th>https://www.thepaper.cn</th>
 </tr>
 </table>
 <h2>Related Notes</h2>
@@ -457,7 +263,7 @@
   </div>
 </div>
 <div class="footer">
-  晞蓝 · 知识库 &copy; 2026 | 由生气画会-回书房维护
+  晞蓝 · 知识库 &copy; 2026 · 由生气画会维护
 </div>
 </body>
 </html>
