@@ -15,6 +15,21 @@
   updateProgress();
   window.addEventListener("scroll", updateProgress, { passive: true });
 
+  var hero = document.querySelector(".hero");
+  var programItems = Array.prototype.slice.call(document.querySelectorAll(".program-item"));
+
+  programItems.forEach(function (item, index) {
+    item.addEventListener("mouseenter", function () {
+      if (hero) {
+        hero.style.setProperty("--spatial-shift", String(index + 1));
+      }
+    });
+  });
+
+  if (hero && programItems.length > 0) {
+    hero.style.setProperty("--spatial-shift", "1");
+  }
+
   var content = document.querySelector(".content");
   var tocList = document.querySelector("[data-toc-list]");
   var headings = content
@@ -52,7 +67,7 @@
     tocList.parentElement.hidden = true;
   }
 
-  var revealTargets = document.querySelectorAll(".map-card, .content > section, .content > h2, .content > table");
+  var revealTargets = document.querySelectorAll(".program-item, .map-card, .content > section, .content > h2, .content > table");
 
   if ("IntersectionObserver" in window) {
     var revealObserver = new IntersectionObserver(
