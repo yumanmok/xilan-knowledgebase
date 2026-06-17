@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看见她之后 - 晞蓝·知识库</title>
+<style>
+  :root {{
+    --bg: #f7f1ea; --text: #25323a; --accent: #8ea9c9;
+    --pink: #d9a2a0; --amber: #d8873d; --gray: #e0d8ce;
+  }}
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  body {{ font-family: 'Noto Sans SC', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }}
+  .nav {{ background: var(--accent); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }}
+  .nav-inner {{ max-width: 1000px; margin: 0 auto; padding: 0 1rem; display: flex; gap: 2rem; align-items: center; }}
+  .nav a {{ color: white; text-decoration: none; font-weight: 500; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  .nav .brand {{ font-size: 1.2rem; font-weight: 700; }}
+  .container {{ max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }}
+  .sidebar {{ float: left; width: 250px; background: white; border-radius: 8px; padding: 1rem; margin-right: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }}
+  .sidebar h3 {{ color: var(--accent); font-size: 0.9rem; margin: 1rem 0 0.5rem; }}
+  .sidebar a {{ display: block; padding: 0.3rem 0.5rem; color: var(--text); text-decoration: none; font-size: 0.9rem; border-radius: 4px; }}
+  .sidebar a:hover {{ background: var(--gray); }}
+  .content {{ margin-left: 270px; background: white; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08); min-height: 60vh; }}
+  .content h1 {{ color: var(--accent); margin-bottom: 1rem; }}
+  .content h2 {{ border-bottom: 2px solid var(--gray); padding-bottom: 0.3rem; margin: 1.5rem 0 0.5rem; }}
+  .content p {{ margin: 0.5rem 0; }}
+  .content table {{ border-collapse: collapse; width: 100%; margin: 1rem 0; }}
+  .content th, .content td {{ border: 1px solid var(--gray); padding: 0.5rem; text-align: left; }}
+  .content th {{ background: var(--accent); color: white; }}
+  pre {{ background: #f5f5f5; padding: 1rem; border-radius: 4px; overflow-x: auto; }}
+  code {{ background: #f0f0f0; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.9em; }}
+  img {{ max-width: 100%; border-radius: 4px; }}
+  .footer {{ text-align: center; padding: 2rem; color: #888; font-size: 0.85rem; clear: both; }}
+  blockquote {{ border-left: 4px solid var(--pink); padding-left: 1rem; margin: 1rem 0; color: #666; }}
+  @media (max-width: 768px) {{ .sidebar {{ float: none; width: 100%; margin: 0 0 1rem; }} .content {{ margin-left: 0; }} }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">晞蓝 · 知识库</a>
+    <a href="/">首页</a>
+    <a href="/xilan-art-store-overview.html">晞蓝</a>
+    <a href="/shengqi-painting-society.html">生气画会</a>
+    <a href="/xilan-see-her-beyond.html">她与她之外</a>
+    <a href="/index.html">索引</a>
+  </div>
+</div>
+<div class="container">
+  <div class="sidebar">
+    <h3>📖 晞蓝</h3>
+    <a href="/xilan-art-store-overview.html">总览</a>
+    <a href="/xilan-brand-identity.html">品牌身份</a>
+    <a href="/xilan-selection-and-products.html">选品与产品线</a>
+    <a href="/xilan-visual-and-content-language.html">视觉与内容语言</a>
+    <h3>🎨 生气画会</h3>
+    <a href="/shengqi-painting-society.html">生气画会</a>
+    <a href="/xilan-see-her-beyond.html">她与她之外</a>
+    <a href="/xilan-see-her-after.html">看见她之后</a>
+    <a href="/xilan-stardust-bracelet.html">星尘落款</a>
+  </div>
+  <div class="content">
+    <h1>看见她之后</h1>
+<h2>Project Definition</h2>
+<p>《看见她之后》是晞蓝围绕母亲节特别放映、映后交谈、爱礼月礼物与“星尘落款”产品展开的一支竖屏短视频项目。它不是单纯的活动留档，也不是纯抒情片，而是把“看见她”从放映现场承接到一份可以被佩戴和带回家的礼物。</p>
+<p>它承接的前置活动是 <a href="xilan-see-her-beyond.md">她与她之外</a>。</p>
+<h2>Core Narrative</h2>
+<p>当前资料中最清楚的叙事判断是：</p>
+<ul>
+<li>前 3 秒先让人知道这是晞蓝。</li>
+<li>现场先成立，再进入“看见她”。</li>
+<li>产品不是结尾才出现，而是从中段开始承担叙事。</li>
+<li>主角不是海报、产品或活动信息，而是“一个礼物如何把看见她这件事落到身体上”。</li>
+</ul>
+<h2>Story Arc</h2>
+<pre><code>flowchart LR
+<p>A[&quot;晞蓝现场&quot;] --&gt; B[&quot;母亲节放映&quot;]</p>
+<p>B --&gt; C[&quot;女儿眼中的母亲&quot;]</p>
+<p>C --&gt; D[&quot;照护、身体、偏见与距离&quot;]</p>
+<p>D --&gt; E[&quot;爱礼月礼物&quot;]</p>
+<p>E --&gt; F[&quot;星尘落款被拿起、佩戴、定格&quot;]</p>
+<p></code></pre></p>
+<h2>Key Copy Direction</h2>
+<p>素材中出现过的旁白方向：</p>
+<p>&gt; 母亲节那天，我们在晞蓝放了五部短片。</p>
+<p>&gt;</p>
+<p>&gt; 看完之后才发现，我们说“谢谢妈妈”太久了，却很少问她：你自己，还想成为什么？</p>
+<p>&gt;</p>
+<p>&gt; 不是送给“妈妈”这个身份，是送给那个还在发光、还会做梦的她。</p>
+<p>这组文案的重点是把“妈妈”重新看成一个仍然有自己生命、梦想和身体经验的人。</p>
+<h2>Visual Direction</h2>
+<ul>
+<li>纪录片式。</li>
+<li>柔和、克制、有现场余温。</li>
+<li>真实手持视频优先，图片只做补位。</li>
+<li>产品镜头以“拿起、戴上、定格”的动作链为主。</li>
+<li>字幕保持小字，不覆盖可识别面孔或产品中心。</li>
+</ul>
+<h2>Known Asset Logic</h2>
+<ul>
+<li>暗场放映空间：建立晞蓝现场。</li>
+<li>空间陈列和墙面画作：让品牌出现但不抢戏。</li>
+<li>爱礼月桌面和海报：把活动转为礼物语境。</li>
+<li>产品桌、拿起手串、戴到手腕：让“看见她”落到身体。</li>
+<li>产品定格和空间光点：完成品牌收束。</li>
+</ul>
+<h2>Local Material Evidence</h2>
+<p>本地视频制作材料反复确认这是“晞蓝艺术商店 / 母亲节特别放映”，并将活动叙事概括为：母亲节那天在晞蓝一起看了五部短片，主题从母亲节进入母女、照护、身体、偏见和距离，再承接到爱礼月与“星尘落款”。</p>
+<p>本地活动主视觉素材确认了更正式的活动信息：</p>
+<ul>
+<li>活动名：她与她之外</li>
+<li>英文名：Beyond Her</li>
+<li>英文副题：A Mother-Daughter Perspective</li>
+<li>中文副标：一直在看她，却未必看见她</li>
+<li>活动性质：母亲节特别放映</li>
+<li>项目线索：家庭影像日 · 城市放映计划 · 阳江站</li>
+<li>日期：2026.05.10</li>
+<li>地点：LightBlue晞蓝艺术商店</li>
+<li>地址：阳江市阳东区永安中路15号</li>
+</ul>
+<p>本地现场照片中，部分 iPhone 原图保留 EXIF 拍摄时间，覆盖 2026-05-09 23:38:46 到 2026-05-10 16:54:09。这个时间线和 2026 年母亲节周末/母亲节当天前后吻合，也与活动公告日期 <code>2026.05.10</code> 相互支持。</p>
+<p>微信活动公告 PDF 确认放映片单顺序为：</p>
+<ul>
+<li>《成为母亲》</li>
+<li>《框景之外》</li>
+<li>《回放》</li>
+<li>《边界植物》</li>
+<li>《影中人》</li>
+</ul>
+<p>版权/放映授权边界仍需单独确认。</p>
+<h2>External Source Leads</h2>
+<ul>
+<li>微信回顾页：<a href="../sources/xilan/see-her-beyond-wechat.md">回书房 · 回看 | 她与她之外</a>，用户已导出 PDF 并保存到 <code>knowledge-base/raw/xilan/see-her-beyond-review.pdf</code>，当前已读取并用于补充现场反馈主题。</li>
+<li>微信活动页：同见来源卡；用户已导出 PDF 并保存到 <code>knowledge-base/raw/xilan/see-her-beyond-announcement.pdf</code>，当前已读取并用于核对活动公告信息。</li>
+</ul>
+<p>这组来源线索说明，“她与她之外”是母亲节放映活动的正式公开表达之一；当前活动公告与回顾信息均已可引用。回顾页显示，现场反馈集中在成为母亲、母女关系、童年经验、家庭语言、离别与照护、边界与疏离、女性身份和代际对话等主题。</p>
+<p>FamilyLens 全国联展推文确认，阳江站属于母亲节十五城二十二空间同步放映计划。用户补充说明，晞蓝是在参与全国联展的基础上做了本地化改编：重新调整主题内容和播放编排，并因阳江常规放映时间容易与家庭晚餐冲突，将活动改为下午场，也没有参加全国统一线上映后会谈，而是在晞蓝现场完成本地围坐分享。</p>
+<h2>Open Tasks</h2>
+<ul>
+<li>核对五部短片版权/放映授权状态。</li>
+<li>如需发布级长文，继续细化《她与她之外》两份 PDF 中的逐段内容与图片说明。</li>
+<li>确认最终旁白版本。</li>
+<li>确认是否进入 <code>publish/</code> 成为公开项目页。</li>
+</ul>
+<h2>Related Notes</h2>
+<ul>
+<li><a href="xilan-visual-and-content-language.md">晞蓝视觉与内容语言</a></li>
+<li><a href="xilan-see-her-beyond.md">她与她之外</a></li>
+<li><a href="xilan-stardust-bracelet.md">星尘落款</a></li>
+<li><a href="xilan-selection-and-products.md">晞蓝选品与产品线</a></li>
+<li><a href="../sources/xilan/internal-materials.md">晞蓝内部资料来源卡</a></li>
+<li><a href="../sources/xilan/see-her-beyond-wechat.md">她与她之外微信文章来源卡</a></li>
+<li><a href="../sources/xilan/familylens-mothers-day-national-screening.md">FamilyLens 母亲节全国联展来源卡</a></li>
+</ul>
+  </div>
+</div>
+<div class="footer">
+  晞蓝 · 知识库 &copy; 2026 | 由生气画会-回书房维护
+</div>
+</body>
+</html>
