@@ -117,7 +117,7 @@ function homePage() {
     activeKey: "home",
     content: `<section class="hero">
   <div class="hero__grid" aria-hidden="true"></div>
-  <div class="hero__kicker">晞蓝空间档案馆 · LightBlue Spatial Archive</div>
+  <div class="hero__kicker">晞蓝空间档案馆 · 阳江 / 艺术商店 / 生气画会</div>
   <div class="hero__stage">
     <div class="hero__copy">
       <p>一个面向生气画会与晞蓝艺术商店的档案型知识库：把地方生活、活动影像、品牌语言、选品与长期方法放在同一张可继续生长的地图里。</p>
@@ -128,9 +128,9 @@ function homePage() {
       <span>档案馆</span>
     </h1>
     <div class="hero__coordinates" aria-label="档案坐标">
-      <span>Yangjiang</span>
-      <span>Archive 2026</span>
-      <span>#8EAFC9 Dawn Blue</span>
+      <span>阳江</span>
+      <span>档案 2026</span>
+      <span>黎明蓝 #8EAFC9</span>
     </div>
   </div>
   <div class="hero__links">
@@ -140,53 +140,40 @@ function homePage() {
   </div>
 </section>
 
+<section class="archive-signal" aria-label="晞蓝档案信息">
+  <span>晞蓝知识库</span>
+  <span>生气画会</span>
+  <span>地方生活</span>
+  <span>活动影像</span>
+  <span>选品与礼物</span>
+  <span>品牌语言</span>
+  <span>长期记录</span>
+</section>
+
 <section class="archive-index" aria-labelledby="archive-index-title">
-  <div class="section-eyebrow">Archive Index</div>
+  <div class="section-eyebrow">档案索引</div>
   <h2 id="archive-index-title">从这里开始</h2>
-  <p>像节目单一样阅读晞蓝：每一行都是一个入口，每一次 hover 都反相成一张更清晰的索引卡。</p>
+  <p>沿着项目、人物、活动与器物进入晞蓝：每个入口都指向一段可以继续补充的现场记录。</p>
   <div class="program-list">
-    ${programItem("01", "Project", "晞蓝艺术商店", "生活美学空间、活动现场与面向公众的艺术商店总览。", "xilan-art-store-overview.html")}
-    ${programItem("02", "Origin", "生气画会", "阳江在地艺术小组，也是晞蓝的内容母体与关系源头。", "shengqi-painting-society.html")}
-    ${programItem("03", "Brand", "品牌身份", "黎明蓝、长效设计、力所能及的收藏，以及晞蓝如何说话。", "xilan-brand-identity.html")}
-    ${programItem("04", "Visual", "视觉与内容语言", "柔和光、纪录片感、现场余温，以及适合晞蓝的动效节奏。", "xilan-visual-and-content-language.html")}
-    ${programItem("05", "Objects", "选品与产品线", "从艺术品、器物到珠串，记录可以被长期使用的生活审美。", "xilan-selection-and-products.html")}
-    ${programItem("06", "Events", "她与她之外", "母亲节特别放映、家庭影像日与阳江本地活动记录。", "xilan-see-her-beyond.html")}
-    ${programItem("07", "Video", "看见她之后", "母亲节放映延伸竖屏短视频项目，叙事与视觉方向。", "xilan-see-her-after.html")}
-    ${programItem("08", "Product", "星尘落款", "把“看见她”落到可以佩戴的礼物上。", "xilan-stardust-bracelet.html")}
+    ${programItem("01", "项目", "晞蓝艺术商店", "生活美学空间、活动现场与面向公众的艺术商店总览。", "xilan-art-store-overview.html")}
+    ${programItem("02", "源头", "生气画会", "阳江在地艺术小组，也是晞蓝的内容母体与关系源头。", "shengqi-painting-society.html")}
+    ${programItem("03", "品牌", "品牌身份", "黎明蓝、长效设计、力所能及的收藏，以及晞蓝如何说话。", "xilan-brand-identity.html")}
+    ${programItem("04", "视觉", "视觉与内容语言", "柔和光、纪录片感、现场余温，以及适合晞蓝的动效节奏。", "xilan-visual-and-content-language.html")}
+    ${programItem("05", "器物", "选品与产品线", "从艺术品、器物到珠串，记录可以被长期使用的生活审美。", "xilan-selection-and-products.html")}
+    ${programItem("06", "活动", "她与她之外", "母亲节特别放映、家庭影像日与阳江本地活动记录。", "xilan-see-her-beyond.html")}
+    ${programItem("07", "影像", "看见她之后", "母亲节放映延伸竖屏短视频项目，叙事与视觉方向。", "xilan-see-her-after.html")}
+    ${programItem("08", "礼物", "星尘落款", "把“看见她”落到可以佩戴的礼物上。", "xilan-stardust-bracelet.html")}
   </div>
 </section>
 
-<section class="spatial-notes" aria-label="空间档案原则">
-  <article>
-    <span>Grid</span>
-    <h2>强栅格</h2>
-    <p>用清晰的列、线和编号，给温柔的内容建立可以辨认的档案秩序。</p>
-  </article>
-  <article>
-    <span>Paper</span>
-    <h2>纸感</h2>
-    <p>保留黎明蓝、暖纸色和轻微颗粒，让页面仍像晞蓝，而不是冷冰冰的科技展。</p>
-  </article>
-  <article>
-    <span>Space</span>
-    <h2>空间层叠</h2>
-    <p>标题、索引、卡片与目录之间保持错位和深度，像走进一个可阅读的展厅。</p>
-  </article>
-  <article>
-    <span>Invert</span>
-    <h2>反相 hover</h2>
-    <p>交互只在需要时出现：轻触一行，黑白反相，让入口短暂变成舞台。</p>
-  </article>
-</section>
-
 <section class="knowledge-map" aria-label="精选档案卡">
-  <div class="section-eyebrow">Selected Rooms</div>
+  <div class="section-eyebrow">精选入口</div>
   <h2>可继续生长的房间</h2>
   <div class="map-grid">
-    ${card("Project", "晞蓝艺术商店", "生活美学空间、活动现场与面向公众的艺术商店总览。", "xilan-art-store-overview.html")}
-    ${card("Origin", "生气画会", "阳江在地艺术小组，也是晞蓝的内容母体与关系源头。", "shengqi-painting-society.html")}
-    ${card("Events", "她与她之外", "母亲节特别放映、家庭影像日与阳江本地活动记录。", "xilan-see-her-beyond.html")}
-    ${card("Product", "星尘落款", "把“看见她”落到可以佩戴的礼物上。", "xilan-stardust-bracelet.html")}
+    ${card("项目", "晞蓝艺术商店", "生活美学空间、活动现场与面向公众的艺术商店总览。", "xilan-art-store-overview.html")}
+    ${card("源头", "生气画会", "阳江在地艺术小组，也是晞蓝的内容母体与关系源头。", "shengqi-painting-society.html")}
+    ${card("活动", "她与她之外", "母亲节特别放映、家庭影像日与阳江本地活动记录。", "xilan-see-her-beyond.html")}
+    ${card("礼物", "星尘落款", "把“看见她”落到可以佩戴的礼物上。", "xilan-stardust-bracelet.html")}
   </div>
 </section>`,
   });
