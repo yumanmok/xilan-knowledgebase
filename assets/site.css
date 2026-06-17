@@ -108,16 +108,27 @@ a:hover {
 }
 
 .brand__mark {
-  display: grid;
+  display: none;
+}
+
+.brand__logo {
+  display: block;
   width: 2rem;
   height: 2rem;
-  place-items: center;
-  border: 1px solid rgba(232, 240, 241, 0.18);
-  border-radius: 999px;
-  background: rgba(142, 175, 201, 0.18);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.brand__text {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--deep);
-  font-size: 0.72rem;
-  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.site-header {
+  padding: 0.5rem 0;
 }
 
 .top-nav {

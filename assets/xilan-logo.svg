@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="晞蓝">
+  <rect width="96" height="96" rx="18" fill="#8EAFC9"/>
+  <rect x="9" y="9" width="78" height="78" rx="12" fill="none" stroke="#F4EDE5" stroke-width="3" opacity="0.78"/>
+  <text x="48" y="43" text-anchor="middle" font-size="27" font-family="Songti SC, Noto Serif CJK SC, serif" font-weight="600" fill="#25323A">晞</text>
+  <text x="48" y="70" text-anchor="middle" font-size="27" font-family="Songti SC, Noto Serif CJK SC, serif" font-weight="600" fill="#25323A">蓝</text>
+</svg>
