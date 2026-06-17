@@ -1,6 +1,20 @@
 (function () {
   document.documentElement.classList.add("js");
 
+  var progress = document.createElement("div");
+  progress.className = "reading-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.appendChild(progress);
+
+  function updateProgress() {
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progress.style.transform = "scaleX(" + Math.min(Math.max(ratio, 0), 1) + ")";
+  }
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+
   var content = document.querySelector(".content");
   var tocList = document.querySelector("[data-toc-list]");
   var headings = content

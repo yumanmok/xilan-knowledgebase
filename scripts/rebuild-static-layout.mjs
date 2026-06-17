@@ -51,18 +51,17 @@ function navLink(file, label, activeKey) {
 }
 
 function sidebar(activeKey) {
-  return `
-    <aside class="sidebar" aria-label="主导航">
+  return `<aside class="sidebar" aria-label="主导航">
       <p class="sidebar__title">晞蓝</p>
       <nav class="sidebar__section" aria-label="晞蓝">
-        <h2>LightBlue</h2>
+        <h2>晞蓝档案</h2>
         ${navLink("xilan-art-store-overview.html", "总览", activeKey)}
         ${navLink("xilan-brand-identity.html", "品牌身份", activeKey)}
         ${navLink("xilan-selection-and-products.html", "选品与产品线", activeKey)}
         ${navLink("xilan-visual-and-content-language.html", "视觉与内容语言", activeKey)}
       </nav>
       <nav class="sidebar__section" aria-label="生气画会与活动">
-        <h2>Shengqi</h2>
+        <h2>生气画会</h2>
         ${navLink("shengqi-painting-society.html", "生气画会", activeKey)}
         ${navLink("xilan-see-her-beyond.html", "她与她之外", activeKey)}
         ${navLink("xilan-see-her-after.html", "看见她之后", activeKey)}
@@ -117,7 +116,7 @@ function homePage() {
     title: "晞蓝知识库",
     activeKey: "home",
     content: `<section class="hero">
-  <div class="hero__meta">LightBlue Art Hub · Archive</div>
+  <div class="hero__meta">晞蓝档案馆 · 生气画会维护</div>
   <h1 class="hero__title">晞蓝<span>知识库</span></h1>
   <p class="hero__copy">一个面向生气画会与晞蓝艺术商店的档案型知识库：把地方生活、活动影像、品牌语言、选品与长期方法放在同一张可继续生长的地图里。</p>
   <div class="hero__links">
